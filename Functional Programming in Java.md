@@ -62,7 +62,7 @@ the naming convention of: unmodifiable\<CollectionName\>, and take the
 Collection object you wish to make unchangeable. Take the following
 example:
 
-``` {.java}
+```java
 List<String> strings = Collections.unmodifiableList(new ArrayList<>(Arrays.asList("Hello", "World")));  
   
 strings.add("Illegal");  
@@ -80,7 +80,7 @@ is not guaranteed the Collection is immutable. For instance, take the
 following example (note that the Point Class is from the java.awt
 package):
 
-``` {.java}
+```java
 Point a = new Point(5,9);  
   
 List<Point> points = Collections.unmodifiableList(new ArrayList<>(Arrays.asList(a)));  
@@ -100,7 +100,7 @@ it must only contain objects that are also immutable.
 Note Java 9 added a less verbose way to create these immutable
 Collections, following the basic syntax:
 
-``` {.java}
+```java
 List<String> strings = List.of("Hello", "World");
 ```
 
@@ -117,7 +117,7 @@ functions (they are actually in fact their own objects but that will be
 explained later). As an example of the syntax of these expressions, say
 we had this simple method:
 
-``` {.java}
+```java
 public static boolean isEven(int num){
     return num % 2 == 0;
 }
@@ -126,7 +126,7 @@ public static boolean isEven(int num){
 This same basic logic can be expressed as a lambda expression as
 follows:
 
-``` {.java}
+```java
 (num) -> { return num % 2 == 0; }
 ```
 
@@ -136,14 +136,14 @@ written within curly brackets, these two separated with a "-\>".
 Since the there is only one argument within the brackets, the expression
 can be simplified further:
 
-``` {.java}
+```java
 num -> { return num % 2 == 0; }
 ```
 
 As well, since the method body only contains a return statement, it may
 be even further simplified:
 
-``` {.java}
+```java
 num -> num % 2 == 0;
 ```
 
@@ -161,7 +161,7 @@ some comparison to anonymous inner-classes, a way to build objects on
 the fly. To review, anonymous inner-classes are often used to pass event
 listeners into swing components:
 
-``` {.java}
+```java
 JButton b1 = new JButton("Hello World");
 
 b1.addActionListener(new ActionListener() {
@@ -198,7 +198,7 @@ to an action. In that case, you would be completely correct, the
 ActionListener interface is a functional interface, and thus can be
 passed as a lambda expression:
 
-``` {.java}
+```java
 JButton b1 = new JButton("Hello World");
 
 b1.addActionListener(event -> {
@@ -252,7 +252,7 @@ terminal methods return a final result, or do something with it. As a
 simple example, the code below takes a list and uses streams to create a
 new list with all the odd elements removed.
 
-``` {.java}
+```java
 List<Integer> nums = List.of(2, 3, 4, 9, 11, 14, 16);
   
 List<Integer> result = nums.stream()  
@@ -330,7 +330,7 @@ used to take elements of a stream, input each as constructor arguments,
 and output a new stream of instances of the corresponding class. As an
 example, say we had the following Person class:
 
-``` {.java}
+```java
 package com.john.amiscaray.functional.examples.models;  
   
 public class Person {  
@@ -358,7 +358,7 @@ If we had a list of names we wanted to create Person objects out of, and
 then invoke the introduce method on each of them, we can solve this
 problem trivially using higher-order functions and method reference:
 
-``` {.java}
+```java
 List<String> names = List.of("John", "Dane", "Jane");  
   
 names.stream()  
@@ -374,7 +374,7 @@ objects, we add the introduce method as an argument, which would invoke
 the introduce method on each Person. That is the equivalent of doing the
 following:
 
-``` {.java}
+```java
 .forEach(person -> person.introduce());
 ```
 
