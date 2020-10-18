@@ -54,7 +54,7 @@ There are many other static methods within the Collections classes of this fashi
 
 **Lambda Expressions**
 
-A Lambda Expression can be defined as an expression used to create a method in-line. These lambda expressions have object-like qualities in that they are passed into higher-order functions (they are actually in fact their own objects but that will be explained later). As an example of the syntax of these expressions, say we had this simple method:
+A lambda expression can be defined as an expression used to create a method in-line. These lambda expressions have object-like qualities in that they are passed into higher-order functions (they are actually in fact their own objects but that will be explained later). As an example of the syntax of these expressions, say we had this simple method:
 
 ```java
 public static boolean isEven(int num){
@@ -82,7 +82,7 @@ As well, since the method body only contains a return statement, it may be even 
 num -> num % 2 == 0;
 ```
 
-At this point, you may be wondering why the types of the parameter and returned value are omitted. With Java being a statically typed language, it may not be very intuitive to you why this is the case. Yet, Lambda Expressions are indeed strongly and statically typed, even though types aren't shown, this will be explained in more detail later.
+At this point, you may be wondering why the types of the parameter and returned value are omitted. With Java being a statically typed language, it may not be very intuitive to you why this is the case. Yet, lambda expressions are indeed strongly and statically typed, even though types aren't shown, this will be explained in more detail later.
 
 **Lambda Expressions vs Anonymous Inner Classes**
 
