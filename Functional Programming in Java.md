@@ -90,8 +90,9 @@ System.out.println(points);
 ```
 
 Running the code outputs the following:
-
-    [java.awt.Point[x=20,y=20]]
+```
+[java.awt.Point[x=20,y=20]]
+```
 
 As you can see, an object within the List was modified using a reference
 pointing to the same object. To ensure that the List is truly immutable,
@@ -269,7 +270,7 @@ method using a simple lambda expression as an argument. This lambda
 expression implements a functional interface called “Predicate.” The
 method it implements takes a value (in this case, it is of type integer
 as are the elements), and returns a boolean. The filter method inputs
-each element into the method. If false is returned, then the element is
+each element into the method; if false is returned, then the element is
 removed from the resulting stream. Note that since the intermediate
 methods return new streams, we can chain methods of the stream interface
 when performing multiple operations; each call within the chain
@@ -298,19 +299,19 @@ stream of the resulting values. The resulting values do not necessarily
 have to be of the same type of the original values. There also exists
 some methods in the Stream interface that behave exactly like the map
 method, but must return a Stream of a particular type. These methods
-follow the basic naming convention of: mapTo\<DataType\>. The functional
-interface that this method accepts is the Function interface.
+follow the basic naming convention of: mapTo\<DataType\>.
 
 The forEach method takes each element of the Stream and expects you to
 perform some kind of action with each element, such as a method
 invocation. The return type of this method is void as it is a terminal
-method. The functional interface that this method accepts is the
-Consumer interface.
+method.
 
 The reduce method takes each element of the stream, cumulatively
-performing an operation (such as the addition of elements) to reduce it
-into a single result. The Functional Interface this method requires is
-the BinaryOperator interface.
+performing an operation we define to reduce it into a single result.
+For example, you may pass a lambda expression to add two elements,
+returning the result. In this case the reduce method would return 
+the sum of all the elements. Note: the lambda expression passed must
+take two elements of the stream as arguments.
 
 **Method Reference**
 
